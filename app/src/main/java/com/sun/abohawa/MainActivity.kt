@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
             { response ->
                 binding.progressBar.visibility = View.INVISIBLE
                 binding.home.visibility = View.VISIBLE
+                list.clear()
                 try {
                     val temperature: String = response.getJSONObject("current").getString("temp_c")
                     binding.temperature.text = "$temperature°c"
