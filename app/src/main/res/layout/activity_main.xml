@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_shade_1"
+    tools:context=".MainActivity">
+    
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/home"
+        android:visibility="invisible">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@color/black_shade_1"
+            android:id="@+id/imageView"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cityName"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="City Name"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/editCityNameLayout"
+                android:layout_below="@+id/cityName"
+                android:weightSum="5">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editCity"
+                    android:layout_margin="10dp"
+                    style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+                    android:layout_weight="4.5"
+                    android:hint="Enter city name"
+                    app:hintTextColor="@color/white"
+                    android:background="@android:color/transparent"
+                    app:boxStrokeColor="@android:color/transparent"
+                    android:padding="5dp"
+                    android:textColorHint="@color/white"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/editTextCityName"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:padding="15dp"
+                        android:background="@android:color/transparent"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/searchButton"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/search_icon"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:layout_below="@+id/editCityNameLayout"
+            android:text="45"
+            android:textSize="70sp"
+            android:textColor="@color/white"
+            />
+
+
+        <ImageView
+            android:id="@+id/tempIcon"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_below="@id/temperature"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:layout_below="@+id/tempIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/conditonTextView"
+            android:text="Condition"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/normalTextView"
+            android:text="Today's Weather Forcast"
+            android:gravity="center"
+            android:layout_below="@+id/conditonTextView"
+            android:layout_marginTop="60dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerviewWeather"
+            android:layout_below="@+id/normalTextView"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/weather_item"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>
