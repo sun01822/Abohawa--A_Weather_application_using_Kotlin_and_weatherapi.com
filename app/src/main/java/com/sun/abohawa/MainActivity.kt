@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun getWeatherInfo(cityName: String) {
         val url =
-            "https://api.weatherapi.com/v1/forecast.json?key=315755977d28461e99b30338231507&q=$cityName&days=1"
+            ""//enter your api url
         binding.cityName.text = cityName
         val requestQueue: RequestQueue = Volley.newRequestQueue(this)
 
